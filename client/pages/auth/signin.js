@@ -1,6 +1,8 @@
-import { useState } from "react";
-import Router from 'next/router';
+import { useState, Im } from "react";
+import Router from "next/router";
+import Image from "next/image";
 import useRequest from "../../hooks/use-request";
+import registerImg from "../../img/register.svg";
 
 const signup = () => {
   const [email, setEmail] = useState("");
@@ -9,14 +11,15 @@ const signup = () => {
     url: "/api/users/signin",
     method: "post",
     body: { email, password },
-    onSuccess: () => {Router.push('/')}
+    onSuccess: () => {
+      Router.push("/");
+    },
   });
 
   const onSubmit = async (event) => {
     event.preventDefault();
-    
+
     await doRequest();
-    
   };
 
   return (

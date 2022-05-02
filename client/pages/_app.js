@@ -1,4 +1,5 @@
 import "bootstrap/dist/css/bootstrap.css";
+import "../style/style.css";
 import buidClient from "../api/build-client";
 import Header from "../components/header";
 
